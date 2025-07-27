@@ -29,7 +29,7 @@ function MyPortfolioScene() {
           <directionalLight position={[-10, 10, 5]} intensity={1}/>
 
           <Text
-            position={[0, 3.5 , 0]}
+            position={[0, 4.0 , 0]}
             fontSize={0.8}
             color="white"
             anchorX="center"
@@ -41,16 +41,26 @@ function MyPortfolioScene() {
 
           {/* Tagline */}
           <Text
-            position={[0, 2.7, 0]}
+            position={[0, 3.2, 0]}
             fontSize={0.3}
             color="lightgray"
             anchorX="center"
             anchorY="middle"
             maxWidth={6}
           >
-            Full-Stack Developer | Obsessed with intuitive UIs
+            Full-Stack Developer | Intuitive UIs & Efficient Backends
           </Text>
 
+          {/* SKILLS HEADING */}
+          <Text
+            position={[0, 2.3, 0]}
+            fontSize={0.5}
+            color="lightgreen"
+            anchorX="center"
+            anchorY="middle"
+          >
+            SKILLS
+          </Text>
 
           {/* Key Skill 1: React & TypeScript */}
           <Text
@@ -88,9 +98,20 @@ function MyPortfolioScene() {
             Socket.io
           </Text>
 
+          {/* PROJECTS HEADING */}
+          <Text
+            position={[0, -0.5, 0]}
+            fontSize={0.5}
+            color="lightgreen"
+            anchorX="center"
+            anchorY="middle"
+          >
+            PROJECTS
+          </Text>
+
           {/* Project 1: IdeaBoard */}
           <Text
-            position={[-3.0, -0.7, 0]}
+            position={[-3.0, -1.8, 0]}
             fontSize={0.35}
             color="yellow"
             anchorX="center"
@@ -101,10 +122,10 @@ function MyPortfolioScene() {
           </Text>
           {/* Project 1 Description */}
           <Text
-            position={[-3.0, -1.2, 0]}
+            position={[-3.0, -2.3, 0]}
             fontSize={0.25}
             color="gray"
-            anchorX="middle"
+            anchorX="center"
             anchorY="middle"
             maxWidth={4}
            >
@@ -113,7 +134,7 @@ function MyPortfolioScene() {
 
           {/* Project 2: Tomato Food App */}
           <Text
-            position={[0, -2.2, 0]}
+            position={[0, -3.2, 0]}
             fontSize={0.35}
             color="cyan"
             anchorX="center"
@@ -125,19 +146,19 @@ function MyPortfolioScene() {
         
           {/* Project 2 Description */}
           <Text
-            position={[0, -2.7, 0]}
+            position={[0, -3.7, 0]}
             fontSize={0.25}
             color="gray"
             anchorX="center"
             anchorY="middle"
             maxWidth={4}
           >
-            Zomato clone with Firebase auth
+            Firebase Auth & protected routes
           </Text>
 
           {/* Project 3: PokeFinder */}
           <Text
-            position={[3.0, -0.7, 0]}
+            position={[3.0, -1.8, 0]}
             fontSize={0.35}
             color="red"
             anchorX="center"
@@ -149,18 +170,18 @@ function MyPortfolioScene() {
 
           {/* Project 3 Description */}
           <Text
-            position={[3.0, -1.2, 0]}
+            position={[3.0, -2.3, 0]}
             fontSize={0.25}
             color="gray"
             anchorX="center"
             anchorY="middle"
             maxWidth={4}
           >
-            Displays 150+ Pokémon with search & filters
+           150+ Pokémon with search & filters
           </Text>
 
           {/* Small rotating element - could symbolize 'problem-solving' or 'innovation' */}
-          <RotatingBox position={[0, -4.0, 0]}/>
+          <RotatingBox position={[0, -4.7, 0]}/>
           
           {/* Orbital Controls to allow user to drag and zoom the scene */}
           <OrbitControls />
