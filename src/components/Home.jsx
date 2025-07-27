@@ -13,16 +13,16 @@ function RotatingTechStack(props) {
     });
     return (
         <group {...props} ref={groupRef}>
-            {/* Base of the laptop/server */}
-            <Box args={[1.5, 0.1, 1]} position={[0, -0.2, 0]}>
+            {/* Base of the laptop/server - Made larger*/}
+            <Box args={[2.5, 0.2, 1.8]} position={[0, -0.3, 0]}>
                 <meshStandardMaterial color="#333333" metalness={0.8} roughness={0.3}/>
             </Box>
             {/* Screen/Top layer - slightly tilted */}
-            <Box args={[1.4, 0.9, 0.1]} position={[0, 0.3, -0.45]} rotation-x={Math.PI / 10}>
+            <Box args={[2.4, 1.5, 0.15]} position={[0, 0.7, -0.8]} rotation-x={Math.PI / 10}>
                 <meshStandardMaterial color="#000000" metalness={0.1} roughness={0.8}/>
             </Box>
             {/* Small accent/button/keyboard*/}
-            <Box args={[1.0, 0.05, 0.5]} position={[0, -0.1, 0.2]}>
+            <Box args={[1.8, 0.1, 0.8]} position={[0, -0.2, 0.5]}>
                 <meshStandardMaterial color="#555555" metalness={0.7} roughness={0.4}/>
             </Box>
         </group>
@@ -192,8 +192,8 @@ function MyPortfolioScene() {
            150+ Pokémon with search & filters
           </Text>
 
-          {/* Small rotating element - could symbolize 'problem-solving' or 'innovation' */}
-          <RotatingTechStack position={[0, -4.7, 0]}/>
+          {/* Stylized rotating tech stack - position adjustement */}
+          <RotatingTechStack position={[0, -6.0, 0]}/>
           
           {/* Orbital Controls to allow user to drag and zoom the scene */}
           <OrbitControls />
@@ -204,7 +204,7 @@ function MyPortfolioScene() {
 const Home = () => {
   return (
     <div style={{ height: '100vh', width: '100vw', background: '#1a1a1a', overflow: 'hidden' }}>
-        <Canvas camera={{ position: [0, 0, 5], fov: 75 }}>
+        <Canvas camera={{ position: [0, 0, 7], fov: 80 }}>
             <MyPortfolioScene />
         </Canvas>
     </div>
