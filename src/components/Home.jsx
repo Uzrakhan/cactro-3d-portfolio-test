@@ -3,18 +3,30 @@ import {Canvas, useFrame} from '@react-three/fiber'
 import {OrbitControls, Text, Box} from '@react-three/drei'
 
 //Component for a simple rotating box
-function RotatingBox(props) {
-    const meshRef = useRef();
+function RotatingTechStack(props) {
+    const groupRef = useRef();
     useFrame(() => {
-        if (meshRef.current) {
-            meshRef.current.rotation.x += 0.01;
-            meshRef.current.rotation.y += 0.005;
+        if (groupRef.current) {
+            groupRef.current.rotation.x += 0.01;
+            groupRef.current.rotation.y += 0.003;
         }
     });
     return (
-        <Box args={[1, 1, 1]} {...props} ref={meshRef}>
-            <meshStandardMaterial color="hotpink"/>
-        </Box>
+        <group {...props} ref={groupRef}>
+            {/* Base of the laptop/server */}
+            <Box args={[1.5, 0.1, 1]} position={[0, -0.2, 0]}>
+                <meshStandardMaterial color="#333333" metalness={0.8} roughness={0.3}/>
+            </Box>
+            {/* Screen/Top layer - slightly tilted */}
+            <Box args={[1.4, 0.9, 0.1]} position={[0, 0.3, -0.45]} rotation-x={Math.PI / 10}>
+                <meshStandardMaterial color="#000000" metalness={0.1} roughness={0.8}/>
+            </Box>
+            {/* Small accent/button/keyboard*/}
+            <Box args={[1.0, 0.05, 0.5]} position={[0, -0.1, 0.2]}>
+                <meshStandardMaterial color="#555555" metalness={0.7} roughness={0.4}/>
+            </Box>
+        </group>
+        
     )
 }
 
@@ -48,7 +60,7 @@ function MyPortfolioScene() {
             anchorY="middle"
             maxWidth={6}
           >
-            Full-Stack Developer | Intuitive UIs & Efficient Backends
+            Full-Stack Developer
           </Text>
 
           {/* SKILLS HEADING */}
@@ -181,7 +193,7 @@ function MyPortfolioScene() {
           </Text>
 
           {/* Small rotating element - could symbolize 'problem-solving' or 'innovation' */}
-          <RotatingBox position={[0, -4.7, 0]}/>
+          <RotatingTechStack position={[0, -4.7, 0]}/>
           
           {/* Orbital Controls to allow user to drag and zoom the scene */}
           <OrbitControls />
